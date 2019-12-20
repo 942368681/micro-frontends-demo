@@ -17,8 +17,10 @@ const config: IConfig =  {
     ['umi-plugin-react', {
       antd: true,
       dva: true,
-      dynamicImport: false,
-      title: 'micro-frontends-demo',
+      dynamicImport: {
+        webpackChunkName: true
+      },
+      title: 'cart',
       dll: false,
       
       routes: {

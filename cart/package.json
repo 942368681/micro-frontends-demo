@@ -5,8 +5,7 @@
     "build": "umi build",
     "test": "umi test",
     "lint:es": "eslint --ext .js src mock tests",
-    "lint:ts": "tslint \"src/**/*.ts\" \"src/**/*.tsx\"",
-    "precommit": "lint-staged"
+    "lint:ts": "tslint \"src/**/*.ts\" \"src/**/*.tsx\""
   },
   "dependencies": {
     "react": "^16.8.6",
@@ -35,14 +34,8 @@
     "umi-types": "^0.3.0"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "tslint --fix",
-      "git add"
-    ],
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "git add"
-    ]
+    "*.{ts,tsx}": ["tslint --fix", "git add"],
+    "*.{js,jsx}": ["eslint --fix", "git add"]
   },
   "engines": {
     "node": ">=8.0.0"
