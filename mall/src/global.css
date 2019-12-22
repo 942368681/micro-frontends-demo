@@ -1,7 +1,9 @@
-html, body, #root {
+html, body, #root, #root-master, .ant-layout {
   height: 100%;
 }
 
 body {
   margin: 0;
+  padding: 0;
 }
+

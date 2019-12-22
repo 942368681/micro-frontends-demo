@@ -28,6 +28,10 @@ const config: IConfig =  {
       routes: {
         exclude: [
           /components\//,
+          /models\//,
+          /services\//,
+          /model\.(t|j)sx?$/,
+          /service\.(t|j)sx?$/
         ],
       },
     }],
@@ -41,14 +45,16 @@ const config: IConfig =  {
               entry: '//localhost:8001', // html entry
               base: '/productList', // app1 的路由前缀，通过这个前缀判断是否要启动该应用，通常跟子应用的 base 保持一致
               // history: 'browser', // 子应用的 history 配置，默认为当前主应用 history 配置
-              mountElementId: 'root-slave'
+              mountElementId: 'root-slave',
+              props: { loading: true }
             },
             {
               name: 'cart', // 唯一 id
               entry: '//localhost:8002', // html entry
               base: '/cart', // app1 的路由前缀，通过这个前缀判断是否要启动该应用，通常跟子应用的 base 保持一致
               // history: 'browser', // 子应用的 history 配置，默认为当前主应用 history 配置
-              mountElementId: 'root-slave'
+              mountElementId: 'root-slave',
+              props: { loading: true }
             },
           ],
           jsSandbox: true, // 是否启用 js 沙箱，默认为 false
