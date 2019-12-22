@@ -12,6 +12,7 @@ const config: IConfig =  {
       ]
     }
   ],
+  base: `/cart`,
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
@@ -29,6 +30,7 @@ const config: IConfig =  {
         ],
       },
     }],
+    ['@umijs/plugin-qiankun', { slave: {} }]
   ],
 }
 
