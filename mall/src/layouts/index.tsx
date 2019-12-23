@@ -3,10 +3,18 @@ import Link from 'umi/link';
 import styles from './index.css';
 import { Layout, Menu } from 'antd';
 const { Header, Footer, Content } = Layout;
+import SimpleLayout from './SimpleLayout';
 
 const BasicLayout: React.FC = (props: any) => {
   const { location } = props;
-  const selectKey = '/' + location.pathname.split('/')[1];
+  const { pathname } = location;
+  
+  if (pathname === '/login') {
+    return <SimpleLayout>{ props.children }</SimpleLayout>
+  }
+  
+  const selectKey = '/' + pathname.split('/')[1];
+
   return (
     <div className={styles.appContainer}>
       <Layout>

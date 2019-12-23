@@ -1,11 +1,15 @@
 import React from 'react';
+import router from 'umi/router';
 import styles from './index.css';
 
-export default function() {
+export default function(props: any) {
+  const toDetail = () => {
+    router.push('/list');
+  }
   return (
     <div className={styles.normal}>
       <ul className={styles.list}>
-        <li>xxx</li>
+        <li onClick={toDetail}>xxx</li>
         <li>xxx</li>
         <li>xxx</li>
         <li>xxx</li>
@@ -15,3 +19,4 @@ export default function() {
     </div>
   );
 }
+
