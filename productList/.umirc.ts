@@ -1,6 +1,5 @@
 import { IConfig } from 'umi-types';
 
-// ref: https://umijs.org/config/
 const config: IConfig =  {
   treeShaking: true,
   // routes: [
@@ -16,13 +15,10 @@ const config: IConfig =  {
   base: `/productList`,
   mountElementId: 'productList-root',
   plugins: [
-    // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
       antd: true,
       dva: true,
-      dynamicImport: {
-        webpackChunkName: true
-      },
+      dynamicImport: false,
       title: 'productList',
       dll: false,
       
@@ -36,7 +32,7 @@ const config: IConfig =  {
         ],
       },
     }],
-    ['@umijs/plugin-qiankun', { slave: {} }]
+    '@umijs/plugin-qiankun'
   ],
 }
 

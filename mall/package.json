@@ -1,4 +1,5 @@
 {
+  "name": "mall",
   "private": true,
   "scripts": {
     "start": "umi dev",
@@ -9,6 +10,7 @@
   },
   "dependencies": {
     "@umijs/plugin-qiankun": "^1.3.4",
+    "dva-logger": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
