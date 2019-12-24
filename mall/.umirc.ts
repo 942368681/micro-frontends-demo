@@ -6,10 +6,11 @@ const config: IConfig =  {
     {
       path: '/',
       component: '../layouts/index',
+      Routes: ['./src/components/Authorized/index'],
       routes: [
         { path: '/', component: '../pages/index' },
-        { path: '/productList'},
-        { path: '/cart'}
+        { path: '/productList/:xxx?'},
+        { path: '/cart/:xxx?'}
       ]
     }
   ],

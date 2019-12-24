@@ -3,6 +3,7 @@ import router from 'umi/router';
 import styles from './index.css';
 
 export default function(props: any) {
+  console.log(props);
   const toDetail = () => {
     router.push('/list');
   }

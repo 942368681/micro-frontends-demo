@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Button } from 'antd';
 import styles from './index.css';
 
 interface IProps {
   dispatch: any,
-  text: string
+  text: string,
+  userName: string
 }
 interface IState {
   aState: string;
@@ -13,45 +13,36 @@ interface IState {
 }
 interface GlobalState {
   global: {
-    text: string
+    text: string,
+    userInfo: {
+      userName: string
+    }
   }
 }
 class App extends React.PureComponent<IProps, IState> {
-  // constructor (props: IProps) {
-  //   super(props);
-  //   this.state = {
-  //     aState: '11',
-  //     bState: '22'
-  //   }
-  // };
+
   state = {
     aState: '',
     bState: '',
   };
 
-  changeText = () => {
-
-    const { dispatch } = this.props;
-    dispatch({
-      type: 'global/setText',
-      text: "首页"
-    });
-  }
-
   render() {
-    const { text } = this.props;
+    const { text, userName } = this.props;
+
+    const title = userName ? `welcome ${userName} !` : '未登录';
 
     return (
       <div className={styles.normal}>
-        <h2>{text}</h2>
-        <Button type="primary" onClick={this.changeText}>click</Button>
+        <h1>{text}</h1>
+        <h2>{title}</h2>
       </div>
     );
   };
 };
 
-export default connect((state: GlobalState) => {
+export default connect((globalState: GlobalState) => {
   return {
-    text: state.global.text
+    text: globalState.global.text,
+    userName: globalState.global.userInfo.userName
   };
 })(App);

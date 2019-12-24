@@ -8,13 +8,12 @@ import SimpleLayout from './SimpleLayout';
 const BasicLayout: React.FC = (props: any) => {
   const { location } = props;
   const { pathname } = location;
-  
   if (pathname === '/login') {
-    return <SimpleLayout>{ props.children }</SimpleLayout>
+    return <SimpleLayout>{props.children}</SimpleLayout>;
   }
   
   const selectKey = '/' + pathname.split('/')[1];
-
+  console.log('selectKey', selectKey)
   return (
     <div className={styles.appContainer}>
       <Layout>
@@ -23,6 +22,7 @@ const BasicLayout: React.FC = (props: any) => {
             theme="dark"
             mode="horizontal"
             defaultSelectedKeys={[selectKey]}
+            selectedKeys={[selectKey]}
             style={{ lineHeight: '64px' }}
           >
             <Menu.Item key="/">

@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './index.css';
 
-export default function() {
+export default function(props: any) {
+  console.log(props);
   return (
     <div className={styles.normal}>
       <ul className={styles.list}>
