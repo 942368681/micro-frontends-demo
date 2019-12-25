@@ -11,7 +11,7 @@ const BasicLayout: React.FC = (props: any) => {
   if (pathname === '/login') {
     return <SimpleLayout>{props.children}</SimpleLayout>;
   }
-  
+
   const selectKey = '/' + pathname.split('/')[1];
   console.log('selectKey', selectKey)
   return (
@@ -29,7 +29,7 @@ const BasicLayout: React.FC = (props: any) => {
               <Link to="/">首页</Link>
             </Menu.Item>
             <Menu.Item key="/productList">
-              <Link to="/productList">商品列表</Link>
+              <Link to={{ pathname: '/productList', query: { init: true } }}>商品列表</Link>
             </Menu.Item>
             <Menu.Item key="/cart">
               <Link to="/cart">购物车</Link>

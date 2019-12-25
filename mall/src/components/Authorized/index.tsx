@@ -11,14 +11,14 @@ interface IState {
 }
 
 class AuthorizedRoute extends React.PureComponent<IProps, IState> {
-  componentDidMount () {
+  componentDidMount() {
     const localUserInfo: any = window.localStorage.getItem('userInfo');
     if (!localUserInfo) {
       router.replace('/login');
     } else {
-      const url = this.props.location.pathname;
-      const pathname = url === '/login' ? '/' : url;
-      router.push(pathname);
+      const { pathname, search } = this.props.location;
+      const url = pathname === '/login' ? '/' : (pathname + search);
+      router.push(url);
     }
   }
   render() {

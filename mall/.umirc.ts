@@ -9,8 +9,8 @@ const config: IConfig =  {
       Routes: ['./src/components/Authorized/index'],
       routes: [
         { path: '/', component: '../pages/index' },
-        { path: '/productList'},
-        { path: '/cart'}
+        { path: '/productList/:init?', exact: false},
+        { path: '/cart', exact: false}
       ]
     }
   ],
