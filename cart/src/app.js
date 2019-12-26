@@ -8,6 +8,9 @@ export const qiankun = {
     // 应用 render 之前触发
     async mount(props) {
         // console.log('app1 mount', props);
+        // console.log('app1 mount', props);
+        const { router } = props;
+        router.replace('/cart');
     },
     // 应用卸载之后触发
     async unmount(props) {

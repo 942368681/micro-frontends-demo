@@ -8,12 +8,26 @@ import SimpleLayout from './SimpleLayout';
 const BasicLayout: React.FC = (props: any) => {
   const { location } = props;
   const { pathname } = location;
+  
   if (pathname === '/login') {
     return <SimpleLayout>{props.children}</SimpleLayout>;
   }
 
   const selectKey = '/' + pathname.split('/')[1];
-  console.log('selectKey', selectKey)
+
+  const extraMenuListDom = () => {
+    const menus = props.SUB_APPS.map((item: any) => {
+      return(
+        <Menu.Item key={item.base}>
+          <Link to={item.base}>{item.title}</Link>
+        </Menu.Item>
+      );
+    });
+    return menus;
+  };
+
+  const contentDom = pathname === '/' ? props.children : null;
+
   return (
     <div className={styles.appContainer}>
       <Layout>
@@ -28,17 +42,11 @@ const BasicLayout: React.FC = (props: any) => {
             <Menu.Item key="/">
               <Link to="/">首页</Link>
             </Menu.Item>
-            <Menu.Item key="/productList">
-              <Link to={{ pathname: '/productList', query: { init: true } }}>商品列表</Link>
-            </Menu.Item>
-            <Menu.Item key="/cart">
-              <Link to="/cart">购物车</Link>
-            </Menu.Item>
+            {extraMenuListDom()}
           </Menu>
         </Header>
         <Content>
-          {props.children}
-          <div id="root-slave" />
+          <div id="root-slave">{contentDom}</div>
         </Content>
         <Footer className={styles.footer}>Ant Design ©2018 Created by Ant UED</Footer>
       </Layout>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './index.css';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button } from 'antd';
 
 const Login: React.FC = (props: any) => {
     const { getFieldDecorator } = props.form;

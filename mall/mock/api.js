@@ -1,4 +1,24 @@
 export default {
+    // 获取应用列表
+    'GET /api/appList': {
+        list: [
+            {
+                title: '商品列表',
+                name: 'productList',
+                entry: '//localhost:8001'
+            },
+            {
+                title: '购物车',
+                name: 'cart',
+                entry: '//localhost:8002'
+            },
+            {
+                title: 'huangyu',
+                name: 'huangyu',
+                entry: '//192.168.200.242:8000'
+            }
+        ]
+    },
     // 登录
     'POST /api/users/login': (req, res) => {
         console.log(req)
@@ -7,6 +27,5 @@ export default {
             userId: '242515',
             token: '123'
         });
-        // res.end();
     },
 };

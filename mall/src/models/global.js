@@ -1,5 +1,4 @@
 import * as usersService from '../services/users';
-import router from 'umi/router';
 
 const initUserInfo = window.localStorage.userInfo ? JSON.parse(window.localStorage.userInfo) : {} 
 
@@ -27,7 +26,7 @@ export default {
                 type: 'saveUserInfo',
                 data
             });
-            router.replace('/');
+            window.location.pathname = "/";
         },
     },
 };
