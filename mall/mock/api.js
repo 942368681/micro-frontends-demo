@@ -13,8 +13,8 @@ export default {
                 entry: '//localhost:8002'
             },
             {
-                title: 'huangyu',
-                name: 'huangyu',
+                title: 'EAssignmentTeacherWeb',
+                name: 'EAssignmentTeacherWeb',
                 entry: '//192.168.200.242:8000'
             }
         ]
