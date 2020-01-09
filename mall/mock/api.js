@@ -13,10 +13,15 @@ export default {
                 entry: '//localhost:8002'
             },
             {
-                title: 'EAssignmentTeacherWeb',
+                title: '教辅作业',
                 name: 'EAssignmentTeacherWeb',
-                entry: '//192.168.200.242:8000'
-            }
+                entry: '//localhost:8003'
+            },
+            // {
+            //     title: 'EAssignmentTeacherWeb',
+            //     name: 'EAssignmentTeacherWeb',
+            //     entry: '//192.168.200.242:8000'
+            // }
         ]
     },
     // 登录

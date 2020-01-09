@@ -21,7 +21,7 @@ export const dva = {
 };
 
 export function render(oldRender) {
-    const localUserInfo = JSON.parse(window.localStorage.getItem('userInfo'));
+    /* const localUserInfo = JSON.parse(window.localStorage.getItem('userInfo'));
     if (localUserInfo && localUserInfo.userId) {
         // setTimeout(() => {
             request('/api/appList', {
@@ -53,7 +53,30 @@ export function render(oldRender) {
         clearInterval(_patchRoutes_timer);
         router.replace('/login');
         oldRender();
-    }
+    } */
+    request('/api/appList', {
+        method: 'GET'
+    }).then(res => {
+        const {
+            data: {
+                list
+            }
+        } = res;
+
+        SUB_APPS = list.map(item => ({
+            ...item,
+            base: `/${item.name}`,
+            history: 'browser',
+            mountElementId: 'root-slave',
+            props: {
+                app: item.name,
+                mainAppStore: window.g_app._store,
+                router
+            }
+        }));
+
+        oldRender();
+    });
 };
 
 export const qiankun = new Promise(resolve => {
