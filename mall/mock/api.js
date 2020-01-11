@@ -5,18 +5,18 @@ export default {
             {
                 title: '商品列表',
                 name: 'productList',
-                entry: '//localhost:8001'
+                entry: '//192.168.101.3:8081'
             },
             {
                 title: '购物车',
                 name: 'cart',
-                entry: '//localhost:8002'
+                entry: '//192.168.101.3:8002'
             },
-            {
-                title: '教辅作业',
-                name: 'EAssignmentTeacherWeb',
-                entry: '//localhost:8003'
-            },
+            // {
+            //     title: '教辅作业',
+            //     name: 'EAssignmentTeacherWeb',
+            //     entry: '//localhost:8003'
+            // },
             // {
             //     title: 'EAssignmentTeacherWeb',
             //     name: 'EAssignmentTeacherWeb',
